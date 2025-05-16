@@ -4,3 +4,20 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(palmerpenguins)
+library(ggplot2)
+
+summary(penguins)
+
+#| label: fig-penguins
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point(size = 3, alpha = 0.7) +
+  labs(title = "Scatterplot of Flipper Length vs. Body Mass",
+       x = "Flipper Length (mm)",
+       y = "Body Mass (g)") +
+  theme_minimal()
+```
+
+
+As we can see in the @fig-penguin above.
